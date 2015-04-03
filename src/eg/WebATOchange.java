@@ -2,7 +2,6 @@ package eg;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.Statement;
 public class WebATOchange {
 
@@ -24,10 +23,6 @@ public class WebATOchange {
 					conn2.close();
 				
 				}
-//		public static void main(String[] args) throws Exception {
-//			WebATOchange we=new WebATOchange();
-//			we.regis("3", "120", "8", "4", "5", "6");
-//		}
 				
 	}
 
