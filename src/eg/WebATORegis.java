@@ -22,7 +22,7 @@ public class WebATORegis {
 				ResultSet exe = statement.executeQuery(sql);
 				
 				if (!exe.next()) {
-					statement.execute(sql2);
+					statement.executeUpdate(sql2);
 					statement.close();
 					conn.close();
 				}
@@ -34,10 +34,6 @@ public class WebATORegis {
 		
 				
 	}
-//		public static void main(String[] args) throws Exception {
-//			WebATORegis ss=new WebATORegis();
-//			ss.regis("3", "3", "3", "3", "3","5");
-//		}
 
 
 }

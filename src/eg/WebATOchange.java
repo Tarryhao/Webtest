@@ -18,7 +18,7 @@ public class WebATOchange {
 				String sql2 = "UPDATE login   SET pwd ='"+pwd+"',phone='"+phone+"',qq='"+qq+"',sex='"+sex+"',glad='"+like+"' WHERE id='"+id+"'";// 要执行的sql语句
 				System.out.println(sql2);
 		System.out.println("修改成功");
-					statement.execute(sql2);
+					statement.executeUpdate(sql2);
 					statement.close();
 					conn2.close();
 				
