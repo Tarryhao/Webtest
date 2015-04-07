@@ -4,7 +4,7 @@
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-//从session中取出对象
+//从session中取出对象.
 RegistUser ru=(RegistUser)session.getAttribute("user");
 String logname=ru.getLogname();
 
