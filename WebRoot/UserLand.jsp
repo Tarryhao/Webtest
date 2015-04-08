@@ -50,7 +50,7 @@ margin:0 auto;
 </head>
   <body>
   <div id="land">
-  <form name="land" action="Registhandle.jsp" method="post">   
+  <form name="land" action="userRegisthandle.jsp" method="post">   
   <table>
   <tr><td><input type="hidden" name="hid" value="注册表"></td></tr>
 <tr> <td> 用户名(*)：</td><td><input type="text" name="logname" id="logname"></td></tr>
@@ -58,13 +58,19 @@ margin:0 auto;
  <tr> <td>  密码确认:</td><td><input type="password" id="pwd2"></td></tr>
  <tr> <td> 性别(*)：</td><td><input name="sex" type="radio" id="man" value="man" checked><label for="man">男</label><input name="sex" type="radio" id="women" value="women"><label for="women">女</label></td></tr>
 <tr> <td> 出生日期：</td><td>
-<select name="出生年">
+	<select name="出生年">
     <option value="1">1990</option>
     <option value="1">1991</option>
     <option value="1">1992</option>
     <option value="1" selected>1993</option>
     </select>
-    <select name="出生月">
+	<select name="出生月">
+    <option value="1">01</option>
+    <option value="1">02</option>
+    <option value="1">03</option>
+    <option value="1">04</option>
+    </select>
+    <select name="出生日">
     <option value="1">01</option>
     <option value="1">02</option>
     <option value="1">03</option>

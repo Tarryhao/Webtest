@@ -45,7 +45,7 @@ margin:0 auto;
 </script>
   <body>
   <div id="land">
-  <form action="UserChange.jsp" method="post">   
+  <form action="userChangeHandler.jsp" method="post">   
   <table>
   <tr><td><input type="hidden" name="hid" value="修改信息表"></td></tr>
   <tr> <td> 用户名:</td><td><input type="text" readonly name="logname" value=<%=logname %>></td></tr>

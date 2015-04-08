@@ -1,18 +1,19 @@
 package eg;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-public class WebATOchecklogin {
-
+/**
+ * 用户登陆的数据库操作类
+ * @author asus
+ *
+ */
+public class WebLoginDAO {
 		public  int checkid(String id,String pwd) throws Exception {
-			    //1.加载驱动
-			    Class.forName("oracle.jdbc.driver.OracleDriver");
-				//2.DriverManager.getConnection("连接协议", "用户名", "密码");
-				Connection conn = DriverManager.getConnection(
-						"jdbc:oracle:thin:@127.0.0.1:1521:ORCL", "Study_user", "123456");
-				//3.得到SQL流
+				//获得数据库连接
+				DBConnecttion dbc=new DBConnecttion();
+				Connection conn = dbc.getConnection();
+				//得到SQL流
 				Statement statement = conn.createStatement();
 				
 				// 要执行的sql语句
@@ -30,14 +31,18 @@ public class WebATOchecklogin {
 					}
 					else{
 						statement.close();
+						//关闭数据库连接
 						conn.close();
+						dbc.closeConnection();
 						throw new Exception("密码错误!!!");
 						
 					}
 				}
 				else{
 					statement.close();
+					//关闭数据库连接
 					conn.close();
+					dbc.closeConnection();
 					throw new Exception("账号不存在!!!");
 				}
 		

@@ -1,11 +1,12 @@
 
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ page import="eg.RegistUser" %>
-<%@ page import="eg.WebATORegis" %>
+<%@ page import="eg.WebChangeDAO" %>
 <%@ include file="common.jsp" %>
 <%
-//用于注册储存
-
+	//用于用户修改信息调用数据库
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 //接收对象
 String logname=request.getParameter("logname");
 String pwd=request.getParameter("pwd");
@@ -28,17 +29,12 @@ ru.setQQ(qq);
 ru.setLike(cboxstr);
 if(sex!=null){
 ru.setSex(sex);}
+//存入数据库中
+WebChangeDAO ato=new WebChangeDAO();
+ato.change(ru);
 //将对象暂存到session中
 session.setAttribute("user", ru);
-//存入数据库中
-WebATORegis ato=new WebATORegis();
-			ato.regis(logname, pwd, phone, qq,sex,cboxstr);
-	
 	
 //跳转到主页
 response.sendRedirect("index2.jsp");
-
-
 %>
-
-

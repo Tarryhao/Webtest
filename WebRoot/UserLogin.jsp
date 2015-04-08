@@ -103,7 +103,7 @@ var code ; //在全局 定义验证码
 </script>
   <body>
   <div id="login">
-    <form name="login" action="Zhongzhuan.jsp" method="post" >
+    <form name="login" action="userLoginHandler.jsp" method="post" >
     用户名<input type="text" id="id" name="id"><br/>
     
     密&nbsp;码 <input type="password" id="pwd" name="pwd"><br/>
