@@ -24,12 +24,33 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	-->
   </head>
   <style type="text/css">
+ body{ font-family:Arial, Segoe UI;background-color:rgb(0, 0, 0);
+	background-image:url(images/bg.jpg);
+	background-repeat: repeat;
+	 background-position: center center;
+	     background-attachment: fixed;
+		 margin:0;
+		 padding:0;
+	 user-select:none;
+-moz-user-select:none;
+-webkit-user-select:none;
+-ms-user-select:none;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+overflow:hidden;
+z-index:0;
+color:rgb(255, 0, 0);
+	
+	}
+
 #login{
 width:500px;
 height:300px;
 position:absolute; 
-top:50%; 
-left:50%; 
+top:25%; 
+left:55%; 
 margin:-150px 0 0 -200px;
 text-color:#000;
 }
@@ -66,11 +87,16 @@ function check()
        document.login.submit();
        }
 }
+//验证码点击刷新
  function changerand()
 {
 	document.getElementById('rand').src="code.jsp";
 }
-      
+ //添加回车键事件
+  document.onkeydown=function(e){
+	var keycode=document.all?event.keyCode:e.which;
+	if(keycode==13) check();
+}
     
 </script>
   <body>
