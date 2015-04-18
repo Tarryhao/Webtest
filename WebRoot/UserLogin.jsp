@@ -22,39 +22,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap-social.css" rel="stylesheet" type="text/css">	
+	<link href="css/templatemo_style.css" rel="stylesheet" type="text/css">	
   </head>
-  <style type="text/css">
- body{ font-family:Arial, Segoe UI;background-color:rgb(0, 0, 0);
-	background-image:url(images/bg.jpg);
-	background-repeat: repeat;
-	 background-position: center center;
-	     background-attachment: fixed;
-		 margin:0;
-		 padding:0;
-	 user-select:none;
--moz-user-select:none;
--webkit-user-select:none;
--ms-user-select:none;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
-overflow:hidden;
-z-index:0;
-color:rgb(255, 0, 0);
-	
-	}
-
-#login{
-width:500px;
-height:300px;
-position:absolute; 
-top:25%; 
-left:55%; 
-margin:-150px 0 0 -200px;
-text-color:#000;
-}
-</style>
+ 
 
   <script type="text/javascript">
   function land()
@@ -99,21 +73,82 @@ function check()
 }
     
 </script>
-  <body>
-  <div id="login">
-    <form name="login" action="userLoginHandler.jsp" method="post" >
-    <table><tr><td>
-    用户名</td><td><input type="text" id="id" name="id"></td></tr>
-    <tr><td>
-    密&nbsp;&nbsp;码</td><td> <input type="password" id="pwd" name="pwd"></td></tr>
-    <tr><td>  
-    验证码</td><td><input type="text" id="yzin" name="rand"><a href="javascript:void(0);" onclick="changerand();return false;"><img id="rand" src="code.jsp" ></a></td></tr>
-    <tr><td>
-    <input type="button" value="提交" onclick="check()" ></td><td>
-    <input type="button" value="注册" onclick="land()" ></td></tr>
-    
-      </table> 
-    </form>
-    </div>
-  </body>
+ <body class="templatemo-bg-image-1">
+	<div class="fa-align-justify">
+		<div class="col-md-12">			
+			<form class="form-horizontal templatemo-login-form-2" role="form" name="login" action="userLoginHandler.jsp" method="post">
+				<div class="row">
+					<div class="col-md-12">
+						<h1>Nice to meet you！</h1>
+					</div>
+				</div>
+				<div class="row">
+					<div class="templatemo-one-signin col-md-6">
+				        <div class="form-group">
+				          <div class="col-md-12">		          	
+				            <label for="username" class="control-label">用户名</label>
+				            <div class="templatemo-input-icon-container">
+				            	<i class="fa fa-user"></i>
+				            	<input type="text" class="form-control" id="id" name="id" autoComplete="off">
+				            </div>		            		            		            
+				          </div>              
+				        </div>
+				        <div class="form-group">
+				          <div class="col-md-12">
+				            <label for="password" class="control-label">密码</label>
+				            <div class="templatemo-input-icon-container">
+				            	<i class="fa fa-lock"></i>
+				            	<input type="password" class="form-control" id="pwd" name="pwd">
+				            </div>
+				          </div>
+				        </div>
+                        <div class="form-group">
+				          <div class="col-md-12">		          	
+				            <label for="username" class="control-label">验证码</label>
+				            <div class="templatemo-input-icon-container">
+				            	<i class="fa fa-lock"></i>
+				            	<input type="text" class="form-control" id="yzin" name="rand" autoComplete="off">
+                                <a href="javascript:void(0);" onclick="changerand();return false;"><img id="rand" src="code.jsp" >&nbsp;&nbsp;&nbsp;看不清楚？点击刷新</a>
+				            </div>		            		            		            
+				          </div>              
+				        </div>
+				        <div class="form-group">
+				          <div class="col-md-12">
+				            <div class="checkbox">
+				                <label>
+				                  <input type="checkbox"> 记住我
+				                </label>
+				            </div>
+				          </div>
+				        </div>
+				        <div class="form-group">
+				          <div class="col-md-12">
+				            <input type="button"  onclick="check()" value="登陆" class="btn btn-warning">
+				          </div>
+				        </div>
+				        <div class="form-group">
+				          	<div class="col-md-12">
+				        		<a href="#" class="text-center">无法登陆?</a>
+				       	 	</div>
+				    	</div>
+					</div>
+					<div class="templatemo-other-signin col-md-6">
+						<label class="margin-bottom-15">
+							用户注册
+						</label>
+						<a class="btn btn-block btn-social btn-facebook margin-bottom-15" onclick="land()">
+						    普通注册
+						</a>
+						<a class="btn btn-block btn-social btn-twitter margin-bottom-15" onclick="land()">
+						    手机快速注册
+						</a>
+						<a class="btn btn-block btn-social btn-google-plus" onclick="land()">
+						    邮箱注册
+						</a>
+					</div>   
+				</div>				 	
+		      </form>		      		      
+		</div>
+	</div>
+</body>
 </html>
