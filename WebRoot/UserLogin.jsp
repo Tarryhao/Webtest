@@ -4,7 +4,21 @@
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-     
+    String idcookie="";
+    String pwdcookie="";
+	Cookie[] cos=request.getCookies();
+	if(cos!=null){
+		for(int i=0;i<cos.length;i++){
+		System.out.println(i+":"+cos[i].getName());
+			if(cos[i].getName().equals("id")){
+			idcookie=cos[i].getValue();
+			}
+			if(cos[i].getName().equals("pwd")){
+			pwdcookie=cos[i].getValue();
+			
+			}
+		}
+	} 
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -12,7 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'UserLogin.jsp' starting page</title>
+    <title>用户登录</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -86,19 +100,19 @@ function check()
 					<div class="templatemo-one-signin col-md-6">
 				        <div class="form-group">
 				          <div class="col-md-12">		          	
-				            <label for="username" class="control-label">用户名</label>
+				            <label for="username" class="control-label" >用户名</label>
 				            <div class="templatemo-input-icon-container">
 				            	<i class="fa fa-user"></i>
-				            	<input type="text" class="form-control" id="id" name="id" autoComplete="off">
+				            	<input type="text" class="form-control" id="id" name="id" autoComplete="off" value=<%=idcookie  %>>
 				            </div>		            		            		            
 				          </div>              
 				        </div>
 				        <div class="form-group">
 				          <div class="col-md-12">
-				            <label for="password" class="control-label">密码</label>
+				            <label for="password" class="control-label" >密码</label>
 				            <div class="templatemo-input-icon-container">
 				            	<i class="fa fa-lock"></i>
-				            	<input type="password" class="form-control" id="pwd" name="pwd">
+				            	<input type="password" class="form-control" id="pwd" name="pwd" value=<%=pwdcookie  %>>
 				            </div>
 				          </div>
 				        </div>
@@ -116,7 +130,8 @@ function check()
 				          <div class="col-md-12">
 				            <div class="checkbox">
 				                <label>
-				                  <input type="checkbox"> 记住我
+				                  <input type="checkbox" name="remember" id="remember" value="remember"> 记住我
+				                  <input type="hidden" name="remember" id="remember" value="notremember"></input>
 				                </label>
 				            </div>
 				          </div>
