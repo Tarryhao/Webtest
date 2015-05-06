@@ -36,16 +36,10 @@ width:500px;
 margin:0 auto;
 }
 </style>
-  <script type="text/javascript">
-  function login()
-{
-	window.location.href = 'UserLogin.jsp';
-	
-}
-</script>
+ 
   <body>
   <div id="land">
-  <form action="userChangeHandler.jsp" method="post">   
+  <form action="UserChangeHandle" method="post">   
   <table>
   <tr><td><input type="hidden" name="hid" value="修改信息表"></td></tr>
   <tr> <td> 用户名:</td><td><input type="text" readonly name="logname" value=<%=logname %>></td></tr>

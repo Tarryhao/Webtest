@@ -50,7 +50,7 @@ margin:0 auto;
 </head>
   <body>
   <div id="land">
-  <form name="land" action="userRegisthandle.jsp" method="post">   
+  <form name="land" action="UserRegistHandle" method="post">   
   <table>
   <tr><td><input type="hidden" name="hid" value="注册表"></td></tr>
 <tr> <td> 用户名(*)：</td><td><input type="text" name="logname" id="logname"></td></tr>

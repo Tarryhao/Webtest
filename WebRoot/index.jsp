@@ -52,7 +52,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 document.write((time=new Date()).getFullYear()+"年"+(time.getMonth()+1)+"月"+time.getDate() + "日 星期"+"日一二三四五六".charAt(time.getDay())+ " "+time.getHours() +":"+time.getMinutes()+":"+time.getSeconds());
 
 </script>
-<div id="user"><a href="UserLogin.jsp">请登陆</a></div>
+<div id="user"><a href="UserLogin2.jsp">请登陆</a></div>
   </div>
 <div id="south">
 <div id="west">系统功能菜单区</div>

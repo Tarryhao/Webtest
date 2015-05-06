@@ -29,7 +29,6 @@ public class WebChangeDAO {
 				ps.close();
 				conn.close();
 				dbc.closeConnection();
-				
 				}
 				
 	}

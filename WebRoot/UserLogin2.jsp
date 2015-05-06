@@ -1,3 +1,4 @@
+<% //登陆副页，用于用户选择退出登陆后显示登陆页面%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ include file="common.jsp" %>
 <%@page import ="eg.JavaBean"%>
@@ -5,7 +6,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
     String idcookie="";
-    String pwdcookie="";
+   
 	Cookie[] cos=request.getCookies();
 	if(cos!=null){
 		for(int i=0;i<cos.length;i++){
@@ -13,19 +14,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			if(cos[i].getName().equals("id")){
 			idcookie=cos[i].getValue();
 			}
-			if(cos[i].getName().equals("pwd")){
-			pwdcookie=cos[i].getValue();
 			
-			}
 		}
 	} 
-	//判断idcookie是否为空，然调用登陆界面，否则自动登录
-	if(idcookie!=""){
-	%><jsp:forward page="UserAutoLoginhandle"/><%
-	}
-	else{
-	%><jsp:forward page="index.jsp"/><%
-	}
+
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -97,7 +89,7 @@ function check()
  <body class="templatemo-bg-image-1">
 	<div class="fa-align-justify">
 		<div class="col-md-12">			
-			<form class="form-horizontal templatemo-login-form-2" role="form" name="login" action="userLoginHandle" method="post">
+			<form class="form-horizontal templatemo-login-form-2" role="form" name="login" action="UserLoginhandle" method="post">
 				<div class="row">
 					<div class="col-md-12">
 						<h1>Nice to meet you！</h1>

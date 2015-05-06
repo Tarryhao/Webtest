@@ -3,6 +3,8 @@ package eg;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+
+import javax.servlet.ServletException;
 /**
  * 用户登陆的数据库操作类
  * @author asus
@@ -26,7 +28,7 @@ public class WebLoginDAO {
 					statement.close();
 					conn.close();
 					if(pwd.equals(passward)){
-						
+						//密码正确返回1
 						return 1;
 					}
 					else{
@@ -34,8 +36,9 @@ public class WebLoginDAO {
 						//关闭数据库连接
 						conn.close();
 						dbc.closeConnection();
-						throw new Exception("密码错误!!!");
-						
+						//密码出错返回2
+						return 2;
+				
 					}
 				}
 				else{
@@ -43,7 +46,8 @@ public class WebLoginDAO {
 					//关闭数据库连接
 					conn.close();
 					dbc.closeConnection();
-					throw new Exception("账号不存在!!!");
+					//账号不存在返回3
+					return 3;
 				}
 		
 				
