@@ -21,7 +21,6 @@ public class WebLoginDAO {
 				// 要执行的sql语句
 				String sql = "select * from login where id='"+id+"'";	
 				ResultSet exe = statement.executeQuery(sql);
-				
 				if (exe.next()) {
 					String passward=exe.getString("pwd");
 					//关闭连接

@@ -55,7 +55,7 @@ String logname=ru.getLogname();
 document.write((time=new Date()).getFullYear()+"年"+(time.getMonth()+1)+"月"+time.getDate() + "日 星期"+"日一二三四五六".charAt(time.getDay())+ " "+time.getHours() +":"+time.getMinutes()+":"+time.getSeconds());
 
 </script>
-<div id="user">Dear.<%=logname %>欢迎您登陆 <a href="index.jsp">退出登陆</a>丨<a href="personInfoEdit.jsp">修改信息</a></div>
+<div id="user">Dear.<%=logname %>欢迎您登陆 <a href="index.jsp">退出登陆</a>丨<a href="personInfoEdit.jsp">修改信息</a>丨<a href="Usertips.jsp">我要留言</a></div>
   </div>
 <div id="south">
 <div id="west">系统功能菜单区</div>
