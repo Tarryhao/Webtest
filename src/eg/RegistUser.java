@@ -56,7 +56,6 @@ public class RegistUser {
 
 	/**
 	 * 提供一个根据用户名得到所有信息的方法
-	 * @param id
 	 * @throws Exception
 	 */
 	public  void get(String id) throws Exception {
@@ -68,7 +67,7 @@ public class RegistUser {
 				//创建JDBC对象statement
 				Statement statement = conn.createStatement();
 				
-				// 要执行的sql语句	
+				// 要执行的sql语句
 				String sql = "select * from login where id='"+id+"'";
 				ResultSet exe = statement.executeQuery(sql);
 				

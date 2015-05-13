@@ -11,16 +11,15 @@ public class DBConnecttion {
 	Connection conn=null;
 	/**
 	 * 获得数据库连接
-	 * @return
 	 * @throws ClassNotFoundException
 	 * @throws SQLException
 	 */
 	public Connection getConnection() throws ClassNotFoundException, SQLException{
 		//加载驱动
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		// DriverManager.getConnection("连接协议", "用户名", "密码");
-		Connection conn = DriverManager.getConnection(
-				"jdbc:oracle:thin:@127.0.0.1:1521:ORCL", "Study_user", "123456");
+		Class.forName("com.mysql.jdbc.Driver");
+		// DriverManager.getConnection("连接协议", "用户名", "密码");并把传输代码设置为UTF-8;
+        conn = DriverManager.getConnection(
+				"jdbc:mysql://localhost/Mycode?characterEncoding=UTF-8", "root", "123456");
 		return conn;
 	}
 	/**

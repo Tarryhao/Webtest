@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Java EE 6">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../开发软件/Tomcat/lib/jasper.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../开发软件/Tomcat/lib/jsp-api.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

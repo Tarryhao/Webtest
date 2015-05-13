@@ -2,6 +2,7 @@ package eg;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URLEncoder;
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
@@ -105,11 +106,12 @@ public class UserLoginhandle extends HttpServlet {
 					e.printStackTrace();
 				}
 				session.setAttribute("user", ee);
+				session.setAttribute("logname",id);
 				
 				//检查“记住我”是否勾选；
 				if(rem[0].equals("remember")){
 				//新建cookie对象
-		   		Cookie idcookie=new Cookie("id",id);
+		   		Cookie idcookie=new Cookie("id", URLEncoder.encode(id, "UTF-8"));
 		   		Cookie pwdcookie=new Cookie("pwd",pwd);
 		   		//设置cookie的生命周期
 		   		idcookie.setMaxAge(300);

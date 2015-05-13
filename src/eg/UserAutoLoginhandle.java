@@ -1,6 +1,7 @@
 package eg;
 
 import java.io.IOException;
+import java.net.URLDecoder;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
@@ -55,6 +56,7 @@ public class UserAutoLoginhandle extends HttpServlet {
 			System.out.println(i+":"+cos[i].getName());
 				if(cos[i].getName().equals("id")){
 				idcookie=cos[i].getValue();
+				idcookie= URLDecoder.decode(idcookie, "UTF-8");
 				}
 				
 			}
@@ -71,6 +73,7 @@ public class UserAutoLoginhandle extends HttpServlet {
 				e.printStackTrace();
 			}
 			session.setAttribute("user", ee);
+			session.setAttribute("logname",idcookie);
 			
 			request.getRequestDispatcher("index2.jsp").forward(request, response);
 	}
@@ -106,7 +109,6 @@ public class UserAutoLoginhandle extends HttpServlet {
 			//存入登陆的用户logname
 			RegistUser ee=new RegistUser();
 			ee.setLogname(idcookie);
-			//登陆成功后根据ID取出用户全部信息，以方便用户修改界面预显示信息
 			try {
 				ee.get(idcookie);
 			} catch (Exception e) {

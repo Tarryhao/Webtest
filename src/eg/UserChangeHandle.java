@@ -99,7 +99,7 @@ public class UserChangeHandle extends HttpServlet {
 		if(sex!=null){
 		ru.setSex(sex);}
 		//存入数据库中
-		WebChangeDAO ato=new WebChangeDAO();
+		WebChangeDAO ato = new WebChangeDAO();
 		try {
 			ato.change(ru);
 		} catch (Exception e) {
