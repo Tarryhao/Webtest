@@ -106,8 +106,12 @@ public class UserLoginhandle extends HttpServlet {
 					e.printStackTrace();
 				}
 				session.setAttribute("user", ee);
+<<<<<<< HEAD
 				session.setAttribute("logname",id);
 				
+=======
+				session.setAttribute("username", id);
+>>>>>>> origin/master
 				//检查“记住我”是否勾选；
 				if(rem[0].equals("remember")){
 				//新建cookie对象

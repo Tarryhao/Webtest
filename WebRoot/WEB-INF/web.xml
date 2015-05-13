@@ -78,8 +78,21 @@
     <exception-type>java.lang.Exception</exception-type >
     <location>/error.jsp</location>
 	</error-page>
+<<<<<<< HEAD
   <listener>
     <listener-class>eg.SessionListener</listener-class>
   </listener>
   
+=======
+	
+	<filter>
+		<filter-name>LoginFilter</filter-name>
+		<filter-class>eg.LoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>LoginFilter</filter-name>
+		<url-pattern>/Usertips.jsp</url-pattern>
+	</filter-mapping>
+
+>>>>>>> origin/master
 </web-app>
